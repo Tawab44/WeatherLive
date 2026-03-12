@@ -24,7 +24,7 @@ export default function Navbar(){
 
     <nav className="navbar">
 
-      <div className="logo">🌦 HerbAi </div>
+      <div className="logo">🌦 HerbAi+ </div>
 
       {/* HAMBURGER BUTTON */}
 
