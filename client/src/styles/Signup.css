@@ -1,0 +1,31 @@
+.signup-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:70vh;
+}
+
+.signup-form{
+  background:#1e3a8a;
+  padding:40px;
+  border-radius:8px;
+  width:300px;
+  color:white;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.signup-form input{
+  padding:10px;
+  border:none;
+  border-radius:5px;
+}
+
+.signup-form button{
+  background:#0f172a;
+  color:white;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+}
