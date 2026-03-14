@@ -1,7 +1,19 @@
-import "../styles/Home.css"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import "../styles/Home.css";
+import { Link } from "react-router-dom";
 
 export default function Home(){
+
+  const [image,setImage] = useState(null);
+
+  const handleImageChange = (e)=>{
+    const file = e.target.files[0];
+
+    if(file){
+      setImage(URL.createObjectURL(file));
+    }
+  };
+
   return(
 
     <div className="home">
@@ -21,6 +33,36 @@ export default function Home(){
         </div>
 
       </div>
+
+
+      {/* IMAGE UPLOAD TEST SECTION */}
+
+      <div className="upload-section">
+
+        <h2>Test Image Upload</h2>
+
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+        />
+
+        {image && (
+          <div className="preview-container">
+
+            <h3>Image Preview</h3>
+
+            <img
+              src={image}
+              alt="preview"
+              className="preview-image"
+            />
+
+          </div>
+        )}
+
+      </div>
+
 
       <div className="features">
 
@@ -43,5 +85,5 @@ export default function Home(){
 
     </div>
 
-  )
+  );
 }

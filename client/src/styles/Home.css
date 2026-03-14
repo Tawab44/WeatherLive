@@ -47,3 +47,19 @@
   width:250px;
   border-radius:8px;
 }
+
+.upload-section{
+  margin-top:40px;
+  text-align:center;
+}
+
+.preview-container{
+  margin-top:20px;
+}
+
+.preview-image{
+  margin-top:10px;
+  max-width:300px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
