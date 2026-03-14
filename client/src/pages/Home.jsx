@@ -5,13 +5,22 @@ import { Link } from "react-router-dom";
 export default function Home(){
 
   const [image,setImage] = useState(null);
+  const [fileName,setFileName] = useState("");
 
   const handleImageChange = (e)=>{
+
     const file = e.target.files[0];
 
     if(file){
-      setImage(URL.createObjectURL(file));
+
+      setFileName(file.name);
+
+      const imageUrl = URL.createObjectURL(file);
+
+      setImage(imageUrl);
+
     }
+
   };
 
   return(
@@ -35,19 +44,27 @@ export default function Home(){
       </div>
 
 
-      {/* IMAGE UPLOAD TEST SECTION */}
+      {/* IMAGE UPLOAD TEST */}
 
       <div className="upload-section">
 
-        <h2>Test Image Upload</h2>
+        <h2>Upload or Capture Image</h2>
 
         <input
           type="file"
           accept="image/*"
+          capture="environment"
           onChange={handleImageChange}
         />
 
+        {fileName && (
+          <p className="file-name">
+            Selected: {fileName}
+          </p>
+        )}
+
         {image && (
+
           <div className="preview-container">
 
             <h3>Image Preview</h3>
@@ -59,6 +76,7 @@ export default function Home(){
             />
 
           </div>
+
         )}
 
       </div>
@@ -85,5 +103,5 @@ export default function Home(){
 
     </div>
 
-  );
+  )
 }
